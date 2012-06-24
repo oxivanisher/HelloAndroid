@@ -1,5 +1,7 @@
 .settings
 .project
 .classpath
+project.properties
 gen/*
+gen/ch/oxi/helloandroid/*
 bin/*
