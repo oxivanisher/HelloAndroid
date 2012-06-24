@@ -27,20 +27,6 @@ class RetreiveJsonTask extends AsyncTask<String, Void, String> {
 		try {
 			System.out.println("starting async task!");
 
-			/*
-			 * StringBuilder builder = new StringBuilder(); HttpClient client =
-			 * new DefaultHttpClient(); HttpGet httpGet = new
-			 * HttpGet(params[0]);
-			 * 
-			 * HttpResponse response = client.execute(httpGet); StatusLine
-			 * statusLine = response.getStatusLine(); int statusCode =
-			 * statusLine.getStatusCode(); if (statusCode == 200) { HttpEntity
-			 * entity = response.getEntity(); InputStream content =
-			 * entity.getContent(); BufferedReader reader = new BufferedReader(
-			 * new InputStreamReader(content)); String line; while ((line =
-			 * reader.readLine()) != null) { builder.append(line); } } else {
-			 * System.out.println("failed to download " + params); }
-			 */
 			URL url = new URL(params[0]);
 			HttpURLConnection urlConnection = (HttpURLConnection) url
 					.openConnection();
