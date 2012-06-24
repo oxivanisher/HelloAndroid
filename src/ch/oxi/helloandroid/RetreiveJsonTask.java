@@ -113,7 +113,6 @@ class RetreiveJsonTask extends AsyncTask<String, Void, String> {
 				/*
 				 * Some logging
 				 */
-
 				System.out.println("download of " + params[0] + " finished!");
 				System.out.println("found: " + returnString.toString());
 
