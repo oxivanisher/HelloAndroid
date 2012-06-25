@@ -11,7 +11,7 @@ public class LoadingScreenActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
-		this.userInputIntent = new Intent(this, GetUserInputActivity.class);
+		this.userInputIntent = new Intent(this, LoadingScreenActivity.class);
 
 		ProgressDialog MyDialog = ProgressDialog.show(
 				LoadingScreenActivity.this, "", " Connecting... ", true);
@@ -24,7 +24,7 @@ public class LoadingScreenActivity extends Activity {
 		try {
 
 			// FIXME buuh -.-
-			// new RetreiveJsonTask(this).execute("http://android.oxi.ch/");
+			new RetreiveJsonTask(this).execute("http://android.oxi.ch/");
 			MyDialog.setMessage("Recieving...");
 			startActivity(userInputIntent);
 		} catch (Exception e) {

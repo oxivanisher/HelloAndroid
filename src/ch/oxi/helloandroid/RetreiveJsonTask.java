@@ -12,14 +12,16 @@ import java.net.URL;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 
 class RetreiveJsonTask extends AsyncTask<String, Void, String> {
 
-	private final GetUserInputActivity getUserInputActivity;
+	private final Activity activity;
 
-	public RetreiveJsonTask(GetUserInputActivity getUserInputActivity) {
-		this.getUserInputActivity = getUserInputActivity;
+	public RetreiveJsonTask(Activity activity) {
+		super();
+		this.activity = activity;
 	}
 
 	// FIXME warum funktioniere ich nicht? *confused*
@@ -114,6 +116,7 @@ class RetreiveJsonTask extends AsyncTask<String, Void, String> {
 				/*
 				 * Draw output
 				 */
+				GetUserInputActivity getUserInputActivity = (GetUserInputActivity) this.activity;
 				getUserInputActivity.getTextviewIntent().putExtra(
 						GetUserInputActivity.EXTRA_MESSAGE,
 						returnString.toString());
