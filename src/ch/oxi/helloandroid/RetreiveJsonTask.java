@@ -22,6 +22,15 @@ class RetreiveJsonTask extends AsyncTask<String, Void, String> {
 		this.getUserInputActivity = getUserInputActivity;
 	}
 
+	// FIXME warum funktioniere ich nicht? *confused*
+	// ich muss wohl ne private methode daraus machen
+
+	// private final LoadingScreenActivity loadingScreenActivity;
+
+	// public LoginJsonTask(LoadingScreenActivity loadingScreenActivity) {
+	// this.loadingScreenActivity = loadingScreenActivity;
+	// }
+
 	@Override
 	protected String doInBackground(String... params) {
 		try {
