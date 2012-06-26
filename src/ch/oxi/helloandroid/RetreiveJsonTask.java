@@ -116,12 +116,14 @@ class RetreiveJsonTask extends AsyncTask<String, Void, String> {
 				/*
 				 * Draw output
 				 */
-				GetUserInputActivity getUserInputActivity = (GetUserInputActivity) this.activity;
-				getUserInputActivity.getTextviewIntent().putExtra(
-						GetUserInputActivity.EXTRA_MESSAGE,
-						returnString.toString());
-				getUserInputActivity.startActivity(getUserInputActivity
-						.getTextviewIntent());
+				if (this.activity instanceof GetUserInputActivity) {
+					GetUserInputActivity getUserInputActivity = (GetUserInputActivity) this.activity;
+					getUserInputActivity.getTextviewIntent().putExtra(
+							GetUserInputActivity.EXTRA_MESSAGE,
+							returnString.toString());
+					getUserInputActivity.startActivity(getUserInputActivity
+							.getTextviewIntent());
+				}
 
 				return in.toString();
 			} finally {

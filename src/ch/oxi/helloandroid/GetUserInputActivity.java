@@ -17,7 +17,7 @@ public class GetUserInputActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		this.setContentView(R.layout.main);
 		System.out.println("onCreate MyFirstActivity");
 	}
 
@@ -25,7 +25,7 @@ public class GetUserInputActivity extends Activity {
 	public void sendMessage(View view) {
 		System.out.println("-> sendMessage");
 		this.textviewIntent = new Intent(this, DisplayMessageActivity.class);
-		EditText editText = (EditText) findViewById(R.id.edit_message);
+		EditText editText = (EditText) this.findViewById(R.id.edit_message);
 		String message = editText.getText().toString();
 
 		ProgressDialog MyDialog = ProgressDialog.show(
@@ -33,7 +33,7 @@ public class GetUserInputActivity extends Activity {
 
 		try {
 
-			MyDialog.show();
+			// MyDialog.show();
 			new RetreiveJsonTask(this).execute("http://android.oxi.ch/");
 
 			MyDialog.setMessage("Sending...");
@@ -48,13 +48,13 @@ public class GetUserInputActivity extends Activity {
 
 		}
 
-		// textviewIntent.putExtra(EXTRA_MESSAGE, message);
-		// startActivity(textviewIntent);
+		this.textviewIntent.putExtra(EXTRA_MESSAGE, message);
+		this.startActivity(this.textviewIntent);
 
 	}
 
 	public Intent getTextviewIntent() {
-		return textviewIntent;
+		return this.textviewIntent;
 	}
 
 	public void setTextviewIntent(Intent textviewIntent) {
